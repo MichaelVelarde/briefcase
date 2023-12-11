@@ -1,7 +1,7 @@
 # Michael Velarde's Software Engineering Portfolio
 
 ## Introduction
-Welcome to my data engineering portfolio! I'm Carlos Michael Velarde Kubber, a Bolivian/American with a Bachelor's degree in Software Engineering. Currently. This Git repository serves as a briefcase housing three substantial projects that I've developed.
+Welcome to my data engineering portfolio! I'm Carlos Michael Velarde Kubber, a Bolivian/American with a Bachelor's degree in Software Engineering. This Git repository serves as a briefcase housing three substantial projects that I've developed.
 
 ### Projects
 
