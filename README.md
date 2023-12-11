@@ -28,7 +28,7 @@ expenses and earnings.
 ## How to Access Projects
 To access a specific project:
 
-1. Clone the repository: `git clone https://github.com/YourUsername/briefcase.git`
+1. Clone the repository: `git clone https://github.com/MichaelVelarde/briefcase.git`
 2. Navigate to the project folder: `cd project_folder`
 
 ## Acknowledgments
