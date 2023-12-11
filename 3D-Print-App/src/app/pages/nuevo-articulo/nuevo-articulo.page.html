@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo articulo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB">
+    <div *ngIf="item">
+      <div class="id_container" >
+        <b>Id: {{item.id}}</b>
+      </div>
+      <div class="input-parent">
+        <label for="nombreArticulo">Nombre del articulo</label>
+        <input type="text" maxlength="50" [(ngModel)]="nombre">
+      </div>
+      <div class="input-parent">
+        <label for="precioArticulo">Precio del articulo</label>
+        <input  type="number" min= "0" maxlength="20" [(ngModel)]="precio">
+      </div>
+      <div class="input-parent">
+        <label for="inversionArticulo">Inversion en el articulo</label>
+        <input type="number" min= "0" maxlength="20" [(ngModel)]="inversion">
+      </div>
+      <div class="line_container">
+        <b>Unidad:</b>
+        <select id="valorUnidad" class="custom-dropdown">
+          <option value="Pieza">Pieza</option>
+          <option value="Kilo">Kilo</option>
+          <option value="Metro">Metro</option>
+          <option value="Litro">Litro</option>
+        </select>
+      </div>
+      <div class="text_line"><b>Cantidad Total: </b>{{item.cantTotal}}</div>
+      <div *ngFor="let almacen of almacenes;" > 
+        <div class="text_line"><b>{{almacen.nombre}}:</b> {{getCantidadAlmacen(almacen.idDb)}} 
+          <input  type="image" class= "edit_icon" src="assets/img/iconEdit.png" (click) = 'editCantidadAlmacen(almacen)'/>
+        </div>
+      </div>
+
+      <input  *ngIf="!(selectedFile=== undefined)" class = "img_articulo" type="image" src="{{selectedFile.src}}" />
+    
+      <div class="ultra_center">
+        <label class="form_button_img">
+          <input #imageInput
+          type="file"
+          accept="image/*"
+          (change)="pickImage(imageInput)"/>
+          <div *ngIf="selectedFile === undefined" class="button_img_text">Escoger Imagen</div>
+          <div *ngIf="!(selectedFile=== undefined)" class="button_img_text">Cambiar Imagen</div>
+        </label>
+      </div>
+
+      <div class="ultra_center"><ion-button color="dark" (click) = "saveItem()">Crear Articulo</ion-button></div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,45 @@
+  .ul3{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #798DC5;  
+  }
+  .ul3 li { 
+    display: block;
+    color: white;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: none;
+  }
+  .ul3 li:hover {    
+    text-decoration: underline;
+  } 
+  .line_For_Table_Title {
+    margin-bottom: 10px;
+    margin-left: 15px;
+    font-weight: bold;
+    display: block; 
+  }
+  .icons_showTable{
+    vertical-align: middle;
+    margin-left: 10px;
+    height: 25px;
+    width: 25px;
+  }
+
+  .button_save_activos {
+    margin-left: 20px;
+    width: auto;
+    background-color: white; /* Green */
+    border: 2px solid black;
+    border-radius: 5px;
+    color: #2B2E63;
+    font-size: 15px;
+  }
+  .button_save_activos:hover{
+    background-color: #2B2E63; /* Green */
+    border-color: #CED1DA;
+    color: #CED1DA;
+  }

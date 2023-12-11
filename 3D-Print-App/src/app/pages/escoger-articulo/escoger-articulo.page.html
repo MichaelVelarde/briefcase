@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Escoge un articulo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngIf = "itempicked === undefined"> 
+  <div class="search_container">
+    <select name="filtroBusqueda3" class="custom-dropdown">
+      <option value="name">Name</option>
+      <option value="id">Id</option>
+    </select>
+    <input name= "textInput3" type="text" class="searchTerm" >
+    <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="search()" />
+  </div>
+  <div class="line-horizontal"></div>
+  <div class="inventario_container">
+    <div class="inventario_id"><b>Id</b></div>
+    <div class="line-vertical"></div>
+    <div class="inventario_nombre"> <b>Nombre</b></div>
+    <div class="line-vertical"></div>
+    <div class="inventario_precio"> <b>Precio</b></div>
+    <div class="line-vertical"></div>
+    <div class="inventario_cantidad"> <b>Cantidad</b></div>
+    <div class="line-vertical"></div>
+    <div class="inventario_icon"><b>Escoger</b></div>
+  </div>
+  <div class="line-horizontal"></div>
+
+  <div *ngFor="let item of inventarioFiltrado; let i = index" >
+    <div class="inventario_container">
+      <div class="inventario_id blue">{{item.id}}</div>
+      <div class="line-vertical"></div>
+      <div class="inventario_nombre"> {{item.nombre}}</div>
+      <div class="line-vertical"></div>
+      <div class="inventario_precio">{{item.precio}}</div>
+      <div class="line-vertical"></div>
+      <div *ngIf="item.cantTotal> 9" class="inventario_cantidad green">{{item.cantTotal}}</div>
+      <div *ngIf="item.cantTotal< 10 && item.cantTotal > 3" class="inventario_cantidad yellow">{{item.cantTotal}}</div>
+      <div *ngIf="item.cantTotal<= 3" class="inventario_cantidad red"> {{item.cantTotal}}</div>
+      <div class="line-vertical"></div>
+      <input  type="image" class= "inventario_icon" src="assets/img/iconCheck.png" (click) ="pickItem(item)" />
+    </div>
+    <div class="line-horizontal"></div> 
+  </div>
+</div>
+
+<div *ngIf = "itempicked !== undefined"> 
+  <div class="container_input_desc">
+    <b>Descuento(Bs):</b>
+    <ion-input [(ngModel)]="descuentoItem" min="0" type="number" ></ion-input>
+  </div>
+  
+  <div class="line-horizontal"></div>
+  <div class="almacen_container">
+    <div class="almacen_nombre"><b>Nombre</b></div>
+    <div class="line-vertical"></div>
+    <div class="almacen_cantidadA"> <b>Disponible</b></div>
+    <div class="line-vertical"></div>
+    <div class="almacen_cantidadE"><b>Cantidad</b></div>
+    <div class="line-vertical"></div>
+    <div class="add_button"><b>Añadir</b></div>
+  </div>
+  <div class="line-horizontal"></div>
+
+  <div *ngFor="let almacen of almacenes" >
+    <div class="almacen_container">
+      <div class="almacen_nombre">{{almacen.nombre}}</div>
+      <div class="line-vertical"></div>
+      <div class="almacen_cantidadA">{{getCantAlmacen(almacen)}}</div>
+      <div class="line-vertical"></div>
+      <div class="item_cantidadE"><b>{{getcantidad(almacen)}}</b></div>
+      <div class="line-vertical"></div>
+      <input  type="image" class= "add_button" src="assets/img/addCant.png" (click) ="pickCant(almacen)" />
+    </div>
+    <div class="line-horizontal"></div> 
+  </div>
+
+  <div class="ultra_center"><ion-button class= "button_no_changeString"color="secondary" (click) ="AgregarVenta()" >Continuar</ion-button></div>
+</div>
+</ion-content>

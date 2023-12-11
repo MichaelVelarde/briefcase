@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click) ="forceBack()" ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Detalles Venta</ion-title>
+    <ion-buttons *ngIf="!entregada" slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="addModel3D()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+  <div *ngIf="!donwloadingDataB && this.venta.keysModelo3D[0]=='Empty'" >
+    <div class="ultra_center"> 
+      <div  class="fila_Text2"> 
+        Debe agregar un modelo3D 
+      </div> 
+    </div>
+  </div>
+  <div *ngIf="!donwloadingDataB && this.venta.keysModelo3D[0]!='Empty'">
+    <div  class="fila_Text">
+      <b> Precio venta: </b>
+      {{priceVenta}} bs
+      <input *ngIf="!entregada"  type="image" class= "edit_icon" src="assets/img/iconEdit.png" (click)="alertaEditPrice()"/>
+    </div>
+    <div  class="fila_Text">
+      <b> Costo venta: </b>
+      {{costoVenta}} bs
+    </div>
+    <div  class="fila_Text2">
+      <b> Precio pintado: </b>
+      {{venta.precioPintado}} bs
+      <input *ngIf="!entregada"  type="image" class= "edit_icon" src="assets/img/iconEdit.png" (click)="alertaEditPricePintado()"/>
+    </div>
+    
+    <div class="line-horizontal"></div>
+
+    <div  class="fila_Text">
+      <b> Modelo3D: </b>
+      <select  name="modelPos" class="custom-dropdown">
+        <option value="{{i}}" *ngFor="let modelo of modelos; let i = index"  >{{modelo.nombre}}</option>
+      </select>
+      <input  type="image" class= "edit_icon" src="assets/img/iconCambiar.png" (click)="changeModel()"/>  
+    </div>
+
+    <div  class="fila_Text">
+      <b> Precio: </b>
+      {{prices[pos]}} bs
+    </div>
+
+    <div class="fila_Text">
+      <b> Costo: </b>
+      {{costos[pos]}} bs
+    </div>
+    <div class="fila_Text">
+      <b> Peso en filamento: </b>
+      {{totalFilamentos[pos]}} g
+    </div>
+    <div class="fila_Text">
+      <b> Horas filamento: </b>
+      {{horasFilamentos[pos]}}
+    </div>
+    <div class="fila_Text">
+      <b> Peso en resina: </b>
+      {{totalResinas[pos]}} g
+    </div>
+    <div class="fila_Text">
+      <b> Horas resina: </b>
+      {{horasResinas[pos]}}
+    </div>
+
+    <div *ngIf="!entregada" class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="calcularCostoTotal()" >Calcular parte</ion-button></div>   
+    
+    <div class="line-horizontal"></div>
+    <div class="parte_Container">
+      <div class="parte_id"><b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_costo"> <b>Precio</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_escala"> <b>Escala</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_numPartes"> <b>Cantidad</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_acciones_title"><b>Acciones</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+  
+    <div *ngFor="let part of partes[pos]; let i = index" >
+      <div class="parte_Container">
+        <div  class="parte_id blue">{{part.id}}</div>
+        <div class="line-vertical"></div>
+        <div class="parte_nombre">{{part.nombre}} </div>
+        <div class="line-vertical"></div>
+        <div class="parte_costo"> {{part.precio}}</div>
+        <div class="line-vertical"></div>
+        <div class="parte_escala"> {{part.escala}} </div>
+        <div class="line-vertical"></div>
+        <div *ngIf= "part.estado == 0"  class="parte_numPartes red">{{part.cantidadImpresa}} / {{part.cantidad}}</div>
+        <div *ngIf= "part.estado == 1"  class="parte_numPartes orange">{{part.cantidadImpresa}} / {{part.cantidad}}</div>
+        <div *ngIf= "part.estado == 2"  class="parte_numPartes green">{{part.cantidadImpresa}} / {{part.cantidad}}</div>
+        <div class="line-vertical"></div>
+        <div class="parte_acciones">
+          <input *ngIf= "part.estado == 0" type="image" class= "partes_icon" src="assets/img/iconSendToPrint.png" (click)="sendToPrint(part)"/>
+          <input *ngIf= "part.estado == 1" type="image" class= "partes_icon" src="assets/img/iconPrinting.png" (click)="isPrinting(part.nombre)"/>
+          <input *ngIf= "part.estado == 2 && !entregada" type="image" class= "partes_icon" src="assets/img/iconPrinted.png" (click)="isPrinted(part)"/>
+          <input  type="image" class= "partes_icon" src="assets/img/search.png" (click)="navergarVerParte(part)"/>
+          <input *ngIf="!entregada" type="image" class= "partes_icon" src="assets/img/iconDelete.png" (click)="alertEliminarParte(part, i)"/>
+        </div>
+      </div>
+      <div class="line-horizontal"></div>
+    </div>
+  </div>
+
+
+</ion-content>

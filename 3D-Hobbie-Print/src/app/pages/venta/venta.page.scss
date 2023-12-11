@@ -1,0 +1,71 @@
+
+.cotizacion_Container{
+    width: 100%;
+    height: 30px;
+    font-size: 10px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cotizacion_id{
+    width: 5%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.red{color:red}
+.blue{color: blue}
+.green{color:green}
+
+.cotizacion_nombre{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cotizacion_factura{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cotizacion_numPartes{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cotizacion_costo{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cotizacion_acciones_title{
+    width: 34%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cotizacion_acciones{
+    width: 34%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ventas_icon{
+    width: 23%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  

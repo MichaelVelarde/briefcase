@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Escoge un cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="search_container">
+    <select id="filtroBusqueda2" class="custom-dropdown">
+      <option value="name">Nombre</option>
+      <option value="tel">Telefono</option>
+    </select>
+    <input id= "textInput2" type="text" class="searchTerm" >
+    <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="search()" />
+  </div>
+
+
+  <div *ngFor="let client of clientesFiltrados; let i = index" >
+    <div class="cliente_container">
+      <div class="cliente_nombre">{{client.nombre}}</div>
+      <div class="line-vertical"></div>
+      <div class="cliente_telefono"> {{client.telefono}}</div>
+      <div class="line-vertical"></div>
+      <input  type="image" class= "cliente_icon" src="assets/img/iconCheck.png" (click) ="setClient(client.id , client.nombre , client.nit)" />
+    </div>
+    <div class="line-horizontal"></div> 
+  </div>
+
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click) ="forceBack()" ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Partes</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB">
+    <div  class="fila_Text">
+      <b> Precio: </b>
+      {{price}} bs
+    </div>
+
+    <div class="fila_Text">
+      <b> Costo: </b>
+      {{costo}} bs
+    </div>
+    <div class="fila_Text">
+      <b> Peso en filamento: </b>
+      {{totalFilamento}} g
+    </div>
+    <div class="fila_Text">
+      <b> Horas filamento: </b>
+      {{horasFilamento}}
+    </div>
+    <div class="fila_Text">
+      <b> Peso en resina: </b>
+      {{totalResina}} g
+    </div>
+    <div class="fila_Text">
+      <b> Horas resina: </b>
+      {{horasResina}}
+    </div>
+
+    <div class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="calcularCostoTotal()" >Calcular parte</ion-button></div>   
+    
+    <div class="line-horizontal"></div>
+    <div class="parte_Container">
+      <div class="parte_id"><b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_costo"> <b>Precio</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_escala"> <b>Escala</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_numPartes"> <b>Cantidad</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_acciones_title"><b>Acciones</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+  
+    <div *ngFor="let part of partes; let i = index" >
+      <div class="parte_Container">
+        <div  class="parte_id blue">{{part.id}}</div>
+        <div class="line-vertical"></div>
+        <div class="parte_nombre">{{part.nombre}} </div>
+        <div class="line-vertical"></div>
+        <div class="parte_costo"> {{part.precio}}</div>
+        <div class="line-vertical"></div>
+        <div class="parte_escala"> {{part.escala}} </div>
+        <div class="line-vertical"></div>
+        <div class="parte_numPartes"> {{part.cantidad}} </div>
+        <div class="line-vertical"></div>
+        <div class="parte_acciones">
+          <input  type="image" class= "partes_icon" src="assets/img/search.png" (click)="navergarVerParte(part)"/>
+          <input  type="image" class= "partes_icon" src="assets/img/iconDelete.png" (click)="alertEliminarParte(part,i)"/>
+        </div>
+      </div>
+      <div class="line-horizontal"></div>
+    </div>
+  </div>
+
+</ion-content>

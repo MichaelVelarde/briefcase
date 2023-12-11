@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div></div>
+    <ion-title style="color: black;">Ventas</ion-title>
+    <ion-buttons slot="secondary"><input type="image" src="assets\img\iconProforma.png" width="35" height="35" (click) ="navegarProforma()"/> </ion-buttons>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+<div *ngIf="!donwloadingDataB">
+  <div  class="search_container">
+    <select  name="filtroBusqueda" class="custom-dropdown">
+      <option value="name">Name</option>
+      <option value="id">Id</option>
+    </select>
+    <input  name= "textInput" type="text" class="searchTerm" >
+    <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="search()" />
+  </div>
+  <div class="mes_title">
+    <p class="xxxx">Ganancias Mensuales </p>
+    <input type="image" class= "mes_title_image" src="assets/img/iconMore.png" width="25" height="25" (click) ="getMoreMeses()" />
+  </div>
+  <div class="line-horizontal"></div>
+
+  <div class="mes_title">
+    <p class="mes_text_container"><b>Mes</b></p>
+    <div class="line-vertical"></div>
+    <p class="mes_text_container"><b>Ganancia</b></p>
+    <div class="line-vertical"></div>
+    <p class="mes_text_container"><b>Inversion</b></p>
+    <div class="line-vertical"></div>
+    <p class="mes_text_container"><b>Ganancia Neta</b></p>
+  </div>
+  <div class="line-horizontal"></div>
+
+  <div *ngFor="let m of mesesFilter" >
+    <div class="mes_title">
+      <p class="mes_text_container">{{ m.date }} </p>
+      <div class="line-vertical"></div>
+      <p class="mes_text_container"> {{ m.gananciasMes }} </p>
+      <div class="line-vertical"></div>
+      <p class="mes_text_container"> {{ m.inversion }} </p>
+      <div class="line-vertical"></div>
+      <p class="mes_text_container">{{  getGananciaNeta(m) }} </p>
+    </div>
+    <div class="line-horizontal"></div>
+  </div>
+
+  <div class="ventas_container">
+    <div class="ventas_id"><b>Id</b></div>
+    <div class="line-vertical"></div>
+    <div class="ventas_cliente"> <b>Cliente</b></div>
+    <div class="line-vertical"></div>
+    <div class="ventas_fecha"> <b>Fecha</b></div>
+    <div class="line-vertical"></div>
+    <div class="ventas_valor"> <b>Valor(bs)</b></div>
+    <div class="line-vertical"></div>
+    <div class="ventas_buttons"><b>Acciones </b></div>
+  </div>
+  <div class="line-horizontal"></div>
+
+  <div *ngFor="let v of ventasFiltrado" >
+    <div class="ventas_container">
+      <div *ngIf="v.seEntrego" class="ventas_id blue"> {{ v.id }}</div>
+      <div *ngIf="!v.seEntrego" class="ventas_id red"> {{ v.id }}</div>
+      <div class="line-vertical"></div>
+      <div class="ventas_cliente"> {{ findClient(v.keyCliente) }} </div>
+      <div class="line-vertical"></div>
+      <div class="ventas_fecha"> {{ v.date }}</div>
+      <div class="line-vertical"></div>
+      <div class="ventas_valor"> {{ v.costo }}</div>
+      <div class="line-vertical"></div>
+      <div class="ventas_buttons">
+        <input  type="image" class= "ventas_icon" src="assets/img/search.png" (click) = 'verVenta(v)'/>
+        <input *ngIf="activeUserAdmin"  type="image" class= "ventas_icon" src="assets/img/delete.png" (click) = 'borrarVenta(v)' />
+      </div>
+    </div>
+    <div class="line-horizontal"></div>
+  </div>
+</div>  
+</ion-content>

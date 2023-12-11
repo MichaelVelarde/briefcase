@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Clientes</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB"> 
+    <div class="search_container">
+      <select name="filtroBusquedaClient" class="custom-dropdown">
+        <option value="name">Nombre</option>
+        <option value="tel">Telefono</option>
+      </select>
+      <input name= "textInputClient" type="text" class="searchTerm" >
+      <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="search()" />
+    </div>
+
+    <div class="line-horizontal"></div>
+    <div class="cliente_container">
+      <div class="cliente_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="cliente_telefono"><b>Telefono</b></div>
+      <div class="line-vertical"></div>
+      <div class="cliente_ciudad"> <b>Ciudad</b></div>
+      <div class="line-vertical"></div>
+      <div class="cliente_nit"> <b>Nit</b></div>
+      <div class="line-vertical"></div>
+      <div class="cliente_buttons"><b>Acciones </b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let client of clientesFiltrados; let i = index" >
+      <div class="cliente_container">
+        <div class="cliente_nombre">{{client.nombre}}</div>
+        <div class="line-vertical"></div>
+        <div class="cliente_telefono"> {{client.telefono}}</div>
+        <div class="line-vertical"></div>
+        <div class="cliente_ciudad">{{client.ciudad}}</div>
+        <div class="line-vertical"></div>
+        <div class="cliente_nit">{{client.nit}}</div>
+        <div class="line-vertical"></div>
+        <div class="cliente_buttons">
+          <input  type="image" class= "cliente_icon" src="assets/img/iconEdit.png"  (click) = 'navegarEdit(client)'/>
+          <input  *ngIf="activeUserAdmin" type="image" class= "cliente_icon" src="assets/img/delete.png" (click) = 'borrarClient(client)' />
+        </div>
+      </div>
+      <div class="line-horizontal"></div> 
+    </div>
+  </div>
+
+</ion-content>

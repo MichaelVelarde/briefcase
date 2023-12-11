@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<div class="body">
+  <img class="img-Sk" src="assets/img/iconSkBolivia.jpg">
+  <div class="input-parent">
+    <label for="username">Usuario</label>
+    <input type="text" [(ngModel)]="user">
+  </div>
+
+  <div class="input-parent">
+    <label for="password">Contraseña</label>
+    <input type="password" [(ngModel)]="password">
+  </div>
+  <div class="button-center">
+    <button type="submit" (click) ="login()" >Iniciar Sesion</button>
+  </div>
+  
+</div> 
+

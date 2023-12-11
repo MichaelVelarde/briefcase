@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Cola de impresion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB">
+    <div class="line-horizontal"></div>
+    <div class="parte_Container">
+      <div class="parte_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_duracion"> <b>Duracion</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_numPartes"> <b>Cantidad</b></div>
+      <div class="line-vertical"></div>
+      <div class="parte_acciones"><b>Acciones</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+  
+    <div *ngFor="let part of partes; let i = index" >
+      <div class="parte_Container">
+        <div class="parte_nombre">{{part.nombre}} </div>
+        <div class="line-vertical"></div>
+        <div class="parte_duracion"> {{part.horasDeImpresion}}</div>
+        <div class="line-vertical"></div>
+        <div class="parte_numPartes orange">{{part.cantidadImpresa}} / {{part.cantidad}}</div>
+        <div class="line-vertical"></div>
+        <div class="parte_acciones">
+          <input  type="image" class= "parte_icon" src="assets/img/iconSumar.png" (click)="agregarCantidadImpresa(part)" />
+          <input  type="image" class= "parte_icon" src="assets/img/iconRestar.png"(click)="quitarCantidadImpresa(part)" />
+          <input  type="image" class= "parte_icon" src="assets/img/search.png" (click)="navergarVerParte(part)"/>
+          <input  type="image" class= "parte_icon" src="assets/img/iconCancelar.png" (click)="alertQuitarCola(part)"/>
+        </div>
+      </div>
+      <div class="line-horizontal"></div>
+    </div>
+
+  </div>
+
+</ion-content>

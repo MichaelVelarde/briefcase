@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Gastos Extra</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+  
+  <div *ngIf="!donwloadingDataB">
+    <div class="mes_title">
+      <p class="text_mes">Gastos Mensuales </p>
+    </div>
+    <div class="line-horizontal"></div>
+    <div class="mes_title">
+      <p class="mes_text_container"><b>Mes</b></p>
+      <div class="line-vertical"></div>
+      <p class="mes_text_container"><b>GastoExtra</b></p>
+    </div>
+    <div class="line-horizontal"></div>
+  
+    <div *ngFor="let m of gastosMeses" >
+      <div class="mes_title">
+        <p class="mes_text_container">{{ m.date }} </p>
+        <div class="line-vertical"></div>
+        <p class="mes_text_container"> {{ m.gasto }} </p>
+      </div>
+      <div class="line-horizontal"></div>
+    </div>
+    <div class="espacio_blanco"></div>
+
+    <div class="line-horizontal"></div>
+    <div class="gastos_container">
+      <div class="gastos_user"> <b>Usuario</b></div>
+      <div class="line-vertical"></div>
+      <div class="gastos_descripcion"> <b>Descripcion</b></div>
+      <div class="line-vertical"></div>
+      <div class="gastos_fecha"><b>Fecha</b></div>
+      <div class="line-vertical"></div>
+      <div class="gastos_costo"> <b>Costo (Bs)</b></div>
+      <div *ngIf="activeUserAdmin" class="line-vertical"></div>
+      <div *ngIf="activeUserAdmin" class="gastos_button"><b>Borrar </b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let g of gastos; let i = index" >
+      <div class="gastos_container">
+        <div class="gastos_user"> {{g.creador}}</div>
+        <div class="line-vertical"></div>
+        <div class="gastos_descripcion">{{g.descripcion}}</div>
+        <div class="line-vertical"></div>
+        <div class="gastos_fecha"> {{g.date}}</div>
+        <div class="line-vertical"></div>
+        <div class="gastos_costo">{{g.costo}}</div>
+        <div *ngIf="activeUserAdmin" class="line-vertical"></div>
+        <input *ngIf="activeUserAdmin" type="image" class= "gastos_button" src="assets/img/delete.png" (click) = 'confirmarBorrarGasto(g)'/>
+      </div>
+      <div class="line-horizontal"></div> 
+    </div> 
+  </div>
+</ion-content>

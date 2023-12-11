@@ -1,0 +1,69 @@
+.input_container{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    height:40px;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cliente_container{
+    width: 100%;
+    height: 35px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cliente_id{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cliente_telefono{
+    width: 15%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cliente_nombre{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cliente_ciudad{
+    width: 14%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cliente_nit{
+    width: 19%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cliente_buttons{
+    width: 17%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cliente_icon{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

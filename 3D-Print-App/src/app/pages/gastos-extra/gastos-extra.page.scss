@@ -1,0 +1,74 @@
+.gastos_container{
+    width: 100%;
+    height: 25px;
+    font-size: 10px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gastos_descripcion{
+    width: 40%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gastos_fecha{
+    width:18%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gastos_costo{
+    width: 18%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gastos_user{
+    width:14%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gastos_button{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mes_title {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mes_text_container{
+    width: 50%;
+    color: black;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.espacio_blanco{
+    height: 40px;
+}
+.text_mes{
+    width: 50%;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

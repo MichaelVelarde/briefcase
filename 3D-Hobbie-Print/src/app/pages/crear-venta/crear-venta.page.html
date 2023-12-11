@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva Venta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB">
+  <div class="form_container" *ngIf="venta">
+    <b> Id: </b> {{venta.id}}
+    <div class="client_form_container">
+      <b> Cliente: </b>
+      <p> {{nameClient}}</p>
+      <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="escogerCliente()" />
+    </div>    
+  </div>
+  <div class="input-parent">
+    <label for="nombreArticulo">  <b> Nombre:</b></label>
+    <input type="text" maxlength="40" [(ngModel)]="nombre">
+  </div>
+
+  <div class="fila_Text">
+    <b>  Realizada por: </b>
+    <select  name="cotizadorSocio" class="custom-dropdown">
+      <option value="{{socio}}" *ngFor="let socio of socios"  >{{socio}}</option>
+    </select>
+  </div>
+
+  <div class="fila_Text"> 
+    <b> Factura:</b>
+    <input  class="checkbox" type="checkbox" [(ngModel)]="factura">
+  </div>
+  <div class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="agregarVenta()" >Crear Venta</ion-button></div>   
+</div>
+</ion-content>

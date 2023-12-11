@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva venta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form_container" *ngIf="venta">
+    <b> Id: {{venta.id}}</b>
+    <div class="client_form_container">
+      <b> Cliente: </b>
+      <p> {{nameClient}}</p>
+      <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="escogerCliente()" />
+    </div>    
+  </div>
+  <div *ngIf="nameClient !== 'Escoge un cliente'">
+  <div *ngIf="items.length > 0" >
+    <div class="checkbox-body-center"> 
+      <label>
+        <span><b>Factura:</b></span>
+        <input  class="checkbox" type="checkbox" [(ngModel)]="factura">
+      </label>
+    </div>
+    <div class="checkbox-body-center"> 
+      <label>
+        <span><b>Interior:</b></span>
+        <input  class="checkbox" type="checkbox" [(ngModel)]="interior">
+      </label>
+    </div>
+    <div class="line-horizontal"></div>
+    <div class="inventario_container">
+      <div class="inventario_id"><b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_precio"> <b>Precio</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_cantidad"> <b>Cantidad</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_descuento"><b>Descuento</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_borrar"><b>Borrar</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let item of items; let i = index" >
+      <div class="inventario_container">
+        <div class="inventario_id">{{item.id}}</div>
+        <div class="line-vertical"></div>
+        <div class="inventario_nombre"> {{item.nombre}}</div>
+        <div class="line-vertical"></div>
+        <div class="inventario_precio">{{venta.articulosPrecios[i]}}</div>
+        <div class="line-vertical"></div>
+        <div class="inventario_cantidad">{{venta.articulosCant[i]}}</div>
+        <div class="line-vertical"></div>
+        <div class="inventario_descuento">{{venta.articulosDescuentos[i]}}</div>
+        <div class="line-vertical"></div>
+        <input  type="image" class= "inventario_borrar" src="assets/img/delete.png" (click) = "deleteItem(i)" />
+      </div>
+      <div class="line-horizontal"></div> 
+    </div>
+    
+    <div *ngIf="priceCalculed">
+      <div  class="price_container">
+        <div class="costo_total"><b>Costo Total: </b>{{venta.costo}}</div>
+        <div class="line-vertical"></div>
+        <div class="factura_box"><b>Factura: </b>{{needFacture()}}</div>
+        <div class="line-vertical"></div>
+        <div class="interior_box"><b>Interior: </b>{{esInterior()}}</div>
+      </div>
+      <div class="line-horizontal"></div> 
+    </div>
+    
+  </div>
+    <div class="container_buttons">
+      <ion-button class = "button_item" color="dark" (click) ="addItem()" >Agregar articulo</ion-button>
+      <ion-button *ngIf= "items.length > 0"class = "button_item" color="dark" (click) ="calcularCosto()">Calcular costo</ion-button>
+    </div>
+    <div class="ultra_center"><ion-button *ngIf="priceCalculed" class = "button_item" color="secondary" (click) ="agregarVenta()" >Agregar venta</ion-button></div>   
+  </div>
+</ion-content>

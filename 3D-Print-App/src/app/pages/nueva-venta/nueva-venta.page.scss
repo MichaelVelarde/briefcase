@@ -1,0 +1,108 @@
+.form_container{
+    width: 100%;
+    font-size: 15px;
+    font-family: "Times New Roman";
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.client_form_container{
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    font-family: "DD";
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.container_buttons{
+    display: flex;
+    align-items: center;  
+    gap: 10px;
+}
+.button_item{
+    text-transform: none;
+    width: 48%;
+}
+
+.inventario_container{
+    width: 100%;
+    height: 35px;
+    font-size: 9px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_id{
+    width: 8%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_nombre{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_precio{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_cantidad{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_descuento{
+    width: 14%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_borrar{
+    width: 8%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.price_container{
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.costo_total{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.factura_box{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.interior_box{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

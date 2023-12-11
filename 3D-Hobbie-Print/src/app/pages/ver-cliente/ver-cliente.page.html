@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Ver cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB"> 
+    <div class="important_Text"><b> Id: </b>{{cliente.id}}</div>
+    <div class="important_Text"><b> Nombre: </b>{{cliente.nombre}}</div>
+    <div class="important_Text"><b> Ciudad: </b>{{cliente.ciudad}}</div>
+    <div class="important_Text"><b> Telefono: </b>{{cliente.telefono}}</div>
+    <div class="important_Text"><b> Nit: </b>{{cliente.nit}}</div>
+  </div>
+  
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Model3D</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB">
+    <div class="input_container">
+      <select id="filtroBusqueda3" class="custom-dropdown">
+        <option value="name">Nombre</option>
+        <option value="id">Id</option>
+      </select>
+      <input id= "textInput3" type="text"  class="input-parent2" >
+      <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="search()" />
+    </div>
+
+    <div class="line-horizontal"></div> 
+    <div class="model_container">
+      <div class="model_id"><b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="model_nombre"><b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="model_precio"> <b>Precio</b></div>
+      <div class="line-vertical"></div>
+      <div class="model_icon_text"> <b>Escoger</b></div>
+      </div>
+    <div class="line-horizontal"></div> 
+    <div *ngFor="let model of model3dsFiltro; let i = index" >
+      <div class="model_container">
+        <div class="model_id">{{model.id}}</div>
+        <div class="line-vertical"></div>
+        <div class="model_nombre"> {{model.nombre}}</div>
+        <div class="line-vertical"></div>
+        <div class="model_precio"> {{model.precio}}</div>
+        <div class="line-vertical"></div>
+        <div class="model_icon_text">   <input  type="image" width="35" height="35" src="assets/img/iconCheck.png" (click) ="alertAddModel(model)" /></div>
+      </div>
+      <div class="line-horizontal"></div> 
+    </div>
+  </div>  
+
+
+</ion-content>

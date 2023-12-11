@@ -1,0 +1,8 @@
+{
+  "name": "3D-Print-App",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

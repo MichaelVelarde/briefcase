@@ -1,0 +1,57 @@
+.form_container{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.client_form_container{
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.cotizador-container{
+    width: 100px;
+    margin-left: 10px;
+}
+
+.input-parent {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.fila_Text {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    gap: 25px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: black;
+}
+.input-parent input {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 8px;
+    width: 95%;
+    font-size: 16px;
+    background: #323131;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+.input-parent input:hover {
+    background: #404040;
+}
+.input-parent input:focus {
+    box-shadow: 0px 0px 0px 1px #0087ff;
+}

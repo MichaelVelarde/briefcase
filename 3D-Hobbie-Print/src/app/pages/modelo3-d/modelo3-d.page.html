@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Modelos 3D</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB">
+    <div class="modelo_Container">
+      <div class="modelo_id"><b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="modelo_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="modelo_precio"> <b>Precio</b></div>
+      <div class="line-vertical"></div>
+      <div class="modelo_costo"> <b>Costo</b></div>
+      <div class="line-vertical"></div>
+      <div class="modelo_numPartes"> <b>Partes</b></div>
+      <div class="line-vertical"></div>
+      <div class="modelo_acciones_title"><b>Acciones</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+  
+    <div *ngFor="let modelo of modelos3D; let i = index" >
+      <div class="modelo_Container">
+        <div  class="modelo_id blue">{{modelo.id}}</div>
+        <div class="line-vertical"></div>
+        <div class="modelo_nombre">{{modelo.nombre}} </div>
+        <div class="line-vertical"></div>
+        <div class="modelo_precio"> {{modelo.precio}}</div>
+        <div class="line-vertical"></div>
+        <div class="modelo_costo"> {{modelo.costo }}</div>
+        <div class="line-vertical"></div>
+        <div class="modelo_numPartes"> {{getNumPartesModel(modelo)}}</div>
+        <div class="line-vertical"></div>
+        <div class="modelo_acciones">
+          <input  type="image" class= "modelo_icon" src="assets/img/iconParts.png" (click)="verPartes(modelo)"/>
+          <input  type="image" class= "modelo_icon" src="assets/img/iconDelete.png" (click)="deleteModelo3d(modelo)"/>
+        </div>
+      </div>
+      <div class="line-horizontal"></div>
+    </div>
+
+  </div> 
+
+</ion-content>

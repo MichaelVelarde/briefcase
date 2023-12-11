@@ -1,0 +1,75 @@
+.id_container{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.line_container{
+    width: 100%;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.input-parent {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: black;
+}
+.input-parent input {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 8px;
+    width: 95%;
+    font-size: 16px;
+    background: #323131;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+.input-parent input:hover {
+    background: #404040;
+}
+.input-parent input:focus {
+    box-shadow: 0px 0px 0px 1px #0087ff;
+}
+.form_button_img{
+    width: 170px;
+    height: 35px;
+    margin-top: 10px;
+    background: #404040;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+.form_button_img:hover{
+    background: black;
+    cursor: pointer;
+}
+.button_img_text{
+    margin-top: 6px;
+    text-align:center;
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+input[type="file"] {
+    display: none;
+}
+.text_line{
+    margin-left: 20px;
+    font-family: "Times New Roman";
+    font-size: 15px;
+    color: black;
+}
+.edit_icon{
+    width:25px;
+    height: 25px;
+}

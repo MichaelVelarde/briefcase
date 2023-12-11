@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sacar Del Inventario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="items.length > 0">
+    <div class="inventario_container">
+      <div class="inventario_id"> <b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_nombre"><b>Nombre</b> </div>
+      <div class="line-vertical"></div>
+      <div class="inventario_cantidad"><b>Cantidad</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_borrar"><b>Borrar</b></div>
+    </div>
+    <div class="line-horizontal"></div> 
+
+    <div *ngFor="let item of items; let i = index" >
+      <div class="inventario_container">
+        <div class="inventario_id">{{item.id}}</div>
+        <div class="line-vertical"></div>
+        <div class="inventario_nombre"> {{item.nombre}}</div>
+        <div class="line-vertical"></div>
+        <div class="inventario_cantidad">{{sacarDeInventario.articulosCant[i]}}</div>
+        <div class="line-vertical"></div>
+        <input  type="image" class= "inventario_borrar" src="assets/img/delete.png" (click) = "deleteItem(i)" />
+      </div>
+      <div class="line-horizontal"></div> 
+    </div>
+  </div>
+  <div class="ultra_center"><ion-button class = "button_item" color="medium" (click) ="addItem()" >Sacar Articulo</ion-button></div>
+  <div *ngIf="items.length > 0" class="ultra_center"><ion-button class = "button_item" color="dark" (click) ="agregarArticulosSacados()" >Completar Operacion</ion-button></div>    
+  
+</ion-content>

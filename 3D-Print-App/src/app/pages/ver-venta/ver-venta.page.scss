@@ -1,0 +1,21 @@
+.text_line{
+    width: 90%;
+    margin: auto;
+    font-family: "Times New Roman";
+    font-size: 15px;
+    color: black;
+}
+
+.container_input_envio{
+    width: 90%;
+    margin: auto;
+    height: auto;
+    font-size: 15px;
+    font-family: "Times New Roman";
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.button_item{
+    text-transform: none;
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Descontar Almacen</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB"> 
+    <div class="sacar_container">
+      <div class="sacar_fecha"> <b>Fecha</b></div>
+      <div class="line-vertical"></div>
+      <div class="sacar_cantidad"><b>Cantidad de articulos</b></div>
+      <div class="line-vertical"></div>
+      <div class="sacar_buttons"><b>Acciones </b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let s of sacados" >
+      <div class="sacar_container">
+        <div class="sacar_fecha">{{s.date}}</div>
+        <div class="line-vertical"></div>
+        <div class="sacar_cantidad"> {{s.articulosCant.length}}</div>
+        <div class="line-vertical"></div>
+        <div class="sacar_buttons">
+          <input  type="image" class= "sacar_icon" src="assets/img/search.png"  (click) = 'verItemSacado(s)' />
+          <input *ngIf="activeUserAdmin" type="image" class= "sacar_icon" src="assets/img/delete.png" (click) = 'borrarItemSacado(s)' />
+        </div>
+      </div>
+      <div class="line-horizontal"></div> 
+    </div> 
+  </div>
+</ion-content>

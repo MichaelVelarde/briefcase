@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Gasto Extra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="input-parent">
+    <label for="descripcionGasto">Descripcion</label>
+    <input type="text" maxlength="50" [(ngModel)]="descripcion">
+  </div>
+  <div class="input-parent">
+    <label for="costoGasto">Costo</label>
+    <input type="text" maxlength="50" [(ngModel)]="costo">
+  </div>
+  <div class="ultra_center"><ion-button color="dark" (click) = "saveGasto()">Agregar Gasto</ion-button></div>
+
+</ion-content>

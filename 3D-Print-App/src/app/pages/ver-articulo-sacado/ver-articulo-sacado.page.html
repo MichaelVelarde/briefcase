@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Articulos Sacados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB && !(items === undefined)" > 
+    <div class="ultra_center"><div class="title_line"><b> Articulos sacados el: {{itemSacado.date}}</b> </div></div>
+    <div class="line-horizontal"></div>
+    <div *ngFor="let item of items; let i = index" >
+      <div class="text_line"> <b>Articulo:</b> {{i+1}} </div>
+      <input class = "img_articulo" type="image" src="{{item.nameImage}}" />
+      <div class="text_line"> <b>Articulo id:</b> {{item.id}} </div>
+      <div class="text_line"> <b>Nombre:</b> {{item.nombre}} </div>
+      <div class="text_line"> <b>Cantidad total sacada:</b> {{itemSacado.articulosCant[i]}} </div>
+      <div *ngFor="let cant of itemSacado.articulosCantCadaLocal[i]; let j = index" >
+        <div class="text_line" ><b>Cantidad de {{getNombreAlmacen(i,j)}}: </b>   {{cant}}</div>
+      </div>
+      <div class="line-horizontal"></div>
+    </div> 
+  </div>
+</ion-content>

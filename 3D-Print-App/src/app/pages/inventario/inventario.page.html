@@ -1,0 +1,75 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Inventario</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+  <div *ngIf="!donwloadingDataB">
+
+    <div  *ngIf="activeUserAdmin" class="ultra_center"><ion-button class = "button_item" color="success" (click) ="exportTableToCSV()" >Descargar Inventario</ion-button></div>
+
+    <div class="search_container">
+      <select  name="filtroBusquedaIven" class="custom-dropdown">
+        <option value="name">Name</option>
+        <option value="id">Id</option>
+      </select>
+      <input  name= "textInputIven" type="text" class="searchTerm" >
+      <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="search()" />
+    </div>
+
+    <ion-item>
+      <ion-label>
+        Almacen:
+      </ion-label>
+      <ion-select #C (ionChange)="filterAlmacen(C.value)" >
+        <ion-select-option value="All">Todos</ion-select-option>
+        <ion-select-option value="{{a.idDb}}" *ngFor="let a of almacenes"  >{{a.nombre}}</ion-select-option> 
+      </ion-select>
+    </ion-item>
+      
+
+
+    <div class="line-horizontal"></div>
+    <div class="inventario_container">
+      <div class="inventario_id"><b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_precio"> <b>Precio</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_cantidad"> <b>Cantidad</b></div>
+      <div class="line-vertical"></div>
+      <div class="inventario_buttons"><b>Acciones </b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let item of inventarioFiltrado; let i = index" >
+        <div class="inventario_container">
+          <div class="inventario_id blue">{{item.id}}</div>
+          <div class="line-vertical"></div>
+          <div class="inventario_nombre"> {{item.nombre}}</div>
+          <div class="line-vertical"></div>
+          <div class="inventario_precio">{{item.precio}}</div>
+          <div class="line-vertical"></div>
+          <div *ngIf="item.cantTotal> 9" class="inventario_cantidad green">{{item.cantTotal}}</div>
+          <div *ngIf="item.cantTotal< 10 && item.cantTotal > 3" class="inventario_cantidad yellow">{{item.cantTotal}}</div>
+          <div *ngIf="item.cantTotal<= 3" class="inventario_cantidad red"> {{item.cantTotal}}</div>
+          <div class="line-vertical"></div>
+          <div class="inventario_buttons">
+            <input  type="image" class= "inventario_icon" src="assets/img/search.png"  (click) = "verItem(item)"/>
+            <input *ngIf="activeUserAdmin" type="image" class= "inventario_icon" src="assets/img/delete.png"  (click) = "borrarItem(item)"/>
+          </div>
+        </div>
+        <div class="line-horizontal"></div> 
+    </div>
+  </div>
+
+</ion-content>
+

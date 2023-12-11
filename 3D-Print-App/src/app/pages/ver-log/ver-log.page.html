@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB">
+    <div class="log_container">
+      <div class="log_user_name"> <b>Usuario</b></div>
+      <div class="line-vertical"></div>
+      <div class="log_date"><b>Fecha</b></div>
+      <div class="line-vertical"></div>
+      <div class="log_time"> <b>Hora</b></div>
+      <div class="line-vertical"></div>
+      <div class="log_accion"><b>Descipcion accion</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let log of logs; let i = index" >
+      <div class="log_container">
+        <div class="log_user_name"> {{getUserName(log.userIdDb)}}</div>
+        <div class="line-vertical"></div>
+        <div class="log_date">{{log.date}}</div>
+        <div class="line-vertical"></div>
+        <div class="log_time"> {{log.time}}</div>
+        <div class="line-vertical"></div>
+        <div class="log_accion">{{log.accion}}</div>
+      </div>
+      <div class="line-horizontal"></div> 
+    </div> 
+  </div>
+
+</ion-content>

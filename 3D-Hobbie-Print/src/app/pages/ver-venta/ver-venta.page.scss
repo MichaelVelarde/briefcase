@@ -1,0 +1,97 @@
+
+.parte_Container{
+    width: 100%;
+    height: 40px;
+    font-size: 10px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parte_id{
+    width: 8%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.red{color:red}
+.blue{color: blue}
+.green{color:green}
+
+.parte_nombre{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parte_escala{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parte_numPartes{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.red{color:red}
+.orange{color:orange}
+.green{color:green}
+
+.parte_costo{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parte_acciones_title{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parte_acciones{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.partes_icon{
+    width: 33%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit_icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fila_Text {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 15px;
+    gap: 15px;
+}
+.fila_Text2{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    gap: 15px;
+}

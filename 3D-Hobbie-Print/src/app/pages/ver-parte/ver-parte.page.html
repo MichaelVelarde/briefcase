@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Ver parte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB && modelo3dPadre!=undefined"> 
+    <div class="important_Text"><b> Id Modelo3D: </b>{{modelo3dPadre.id}}</div>
+    <div class="important_Text"><b> Nombre Modelo3D: </b>{{modelo3dPadre.nombre}}</div>
+    <div class="ultra_center"><div class="title_Text"><b> Datos parte </b></div></div>
+    <div class="line-horizontal"></div>
+    <div class="important_Text"><b> Id: </b>{{parte.id}}</div>
+    <div class="important_Text"><b> Nombre: </b>{{parte.nombre}}</div>
+    <div class="important_Text"><b> Precio de impresion: </b>{{parte.precio}}</div>
+    <div class="important_Text"><b> Costo de impresion: </b>{{parte.costo}}</div>
+    <div class="ultra_center"><div class="title_Text"><b> Mas detalles </b></div></div>
+    <div class="line-horizontal"></div>
+
+    <div class="fila_Text2">
+      <b>  Material: </b>
+      <select  name="materiales2" class="custom-dropdown2">
+        <option value="{{mat}}" *ngFor="let mat of materiales ;  let i = index"  >{{mat}} : {{getMatCosto(i)}} bs</option>
+      </select>
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b> Gramos de material</b></label>
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="gramos">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b> Horas de impresion:</b></label>
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="horas">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b>Cantidad de piezas:</b></label>
+      <input  type="number" min= "1" maxlength="20" [(ngModel)]="cantidad">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b> Escala:</b></label>
+      <input  type="number" min= "1" maxlength="20" [(ngModel)]="escala">
+    </div>
+    <div class="input-parent">
+      <label for="nombreArticulo"> <b> Detalles extra:</b></label>
+      <input type="text" maxlength="40" [(ngModel)]="detalle">
+    </div>
+    <div class="fila_Text2"> 
+      <b> Tiene soportes?:</b>
+      <input  class="checkbox" type="checkbox" [(ngModel)]="soporte">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b>Dimensiones (Altura, Largo, Ancho):</b></label>
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="dimAltura">
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="dimLargo">
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="dimAncho">
+    </div>
+    <div  *ngIf="!ventaEntrega"  class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="actualizarParte()" >Actualizar datos</ion-button></div>   
+    
+
+  </div>
+  
+
+</ion-content>

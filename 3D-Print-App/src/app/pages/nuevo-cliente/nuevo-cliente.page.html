@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="input-parent">
+    <label for="nombreArticulo">Nombre del cliente</label>
+    <input type="text" maxlength="40" [(ngModel)]="nombre">
+  </div>
+  <div class="input-parent">
+    <label for="nombreArticulo">Telefono del cliente</label>
+    <input type="text" maxlength="20" [(ngModel)]="telefono">
+  </div>
+  <div class="input-parent">
+    <label for="nombreArticulo">Ciudad del cliente</label>
+    <input type="text" maxlength="30" [(ngModel)]="ciudad">
+  </div>
+  <div class="input-parent">
+    <label for="nombreArticulo">Nit del cliente</label>
+    <input type="text" maxlength="50" [(ngModel)]="nit">
+  </div>
+  <div *ngIf="!editCLient" class="ultra_center"><ion-button color="dark" (click) = "saveClient()">Agregar Cliente</ion-button></div>
+  <div *ngIf="editCLient" class="ultra_center"><ion-button color="dark" (click) = "editClient()">Editar Cliente</ion-button></div>
+
+</ion-content>

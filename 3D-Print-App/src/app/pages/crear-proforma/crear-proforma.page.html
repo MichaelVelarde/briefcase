@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear proforma</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+  <div *ngIf="!donwloadingDataB">
+  
+  <div class="form_container" *ngIf="proforma">
+    <div class="client_form_container">
+      <b> Cliente: </b>
+      <p> {{nameClient}}</p>
+      <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="escogerCliente()" />
+    </div>    
+  </div>
+  <div *ngIf="nameClient !== 'Escoge un cliente'">
+    <div class="ultra_center"><ion-button class = "button_item" color="dark" (click) ="addItem()" >Agregar articulo</ion-button></div>
+  <div *ngIf="proforma.articulosids.length > 0" >
+    <div class="line-horizontal"></div>
+      <div class="inventario_container">
+        <div class="inventario_id"><b>Id</b></div>
+        <div class="line-vertical"></div>
+        <div class="inventario_nombre"> <b>Nombre</b></div>
+        <div class="line-vertical"></div>
+        <div class="inventario_precio"> <b>Precio</b></div>
+        <div class="line-vertical"></div>
+        <div class="inventario_cantidad"> <b>Cantidad</b></div>
+        <div class="line-vertical"></div>
+        <div class="inventario_borrar"><b>Borrar</b></div>
+      </div>
+      <div class="line-horizontal"></div>
+
+      <div *ngFor="let id of proforma.articulosids ; let i = index" >
+        <div class="inventario_container">
+          <div class="inventario_id">{{id}}</div>
+          <div class="line-vertical"></div>
+          <div class="inventario_nombre"> {{proforma.articulosNombres}}</div>
+          <div class="line-vertical"></div>
+          <div class="inventario_precio"><ion-button class = "button_item" fill="clear" (click) ="changePrecio(i)" >{{proforma.articulosPrecios[i]}}</ion-button></div>
+          <div class="line-vertical"></div>
+          <div class="inventario_cantidad">{{proforma.articulosCant[i]}}</div>
+          <div class="line-vertical"></div>
+          <input  type="image" class= "inventario_borrar" src="assets/img/delete.png" (click) = "deleteItem(i)" />
+        </div>
+        <div class="line-horizontal"></div> 
+      </div>
+    <div class="ultra_center"><b>Editar estos datos al ultimo.</b></div>
+    <div class="line-horizontal"></div>
+    <div class="input-parent">
+      <label for="numeroProforma">Numero Proforma</label>
+      <input type="number" maxlength="20" [(ngModel)]="numeroProforma">
+    </div>
+    <div class="input-parent">
+      <label for="direccion">Direccion</label>
+      <input type="text" maxlength="150" [(ngModel)]="direccion">
+    </div>
+    <div class="input-parent">
+      <label for="telefono">Telefono</label>
+      <input type="number" maxlength="20" [(ngModel)]="telefono">
+    </div>
+    <div class="input-parent">
+      <label for="ciudad">Ciudad</label>
+      <input type="text" [(ngModel)]="ciudad">
+    </div>
+    <div class="input-parent">
+      <label for="correo">Correo</label>
+      <input type="text" [(ngModel)]="correo">
+    </div>
+    <div class="input-parent">
+      <label for="validez">Validez de la oferta en dias:</label>
+      <input type="number" [(ngModel)]="validez">
+    </div>
+    <div class="input-parent">
+      <label for="fecha">Fecha</label>
+      <input type="date" [(ngModel)]="fecha">
+    </div>
+    <div class="input-parent">
+      <label for="leyenda">Leyenda</label>
+      <input  type="text" [(ngModel)]="leyenda">
+    </div>
+  
+    <div class="ultra_center"><ion-button class = "button_item" color="dark" (click) ="pdfDownload()" >Crear pdf</ion-button></div>
+ 
+  </div>
+  </div>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+ .ul2{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #798DC5;  
+  }
+
+  .ul2 li { 
+    display: block;
+    color: white;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: none;
+  }
+  .registroActual{
+   background-color: #000B4F;
+  }
+  /* Change the link color to #111 (black) on hover */
+  .ul2 li:hover {    
+    text-decoration: underline;
+  } 
+  

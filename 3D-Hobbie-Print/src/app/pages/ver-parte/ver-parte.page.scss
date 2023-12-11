@@ -1,0 +1,62 @@
+.fila_Text {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 10px;
+    gap: 10px;
+}
+.input-parent {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.fila_Text2 {
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 25px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: black;
+}
+.input-parent input {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 8px;
+    width: 95%;
+    font-size: 16px;
+    background: #323131;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+.input-parent input:hover {
+    background: #404040;
+}
+.input-parent input:focus {
+    box-shadow: 0px 0px 0px 1px black;
+}
+.important_Text{
+    font-size: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 10px;
+    gap: 10px;
+}
+.title_Text{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

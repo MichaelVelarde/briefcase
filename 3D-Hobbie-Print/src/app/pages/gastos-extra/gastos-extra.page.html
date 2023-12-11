@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Gastos Extra</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCrearGasto()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB2" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB2">
+    <div *ngIf="this.gastosExtra != undefined && this.gastosExtra.length >0">
+      <div class="mes_title">
+        <p class="text_mes">Gastos Mensuales </p>
+      </div>
+      <div class="line-horizontal"></div>
+      <div class="mes_title">
+        <p class="mes_text_container"><b>Mes</b></p>
+        <div class="line-vertical"></div>
+        <p class="mes_text_container"><b>Gasto total</b></p>
+      </div>
+      <div class="line-horizontal"></div>
+    
+      <div *ngFor="let m of gastosMeses" >
+        <div class="mes_title">
+          <p class="mes_text_container">{{ m.date }} </p>
+          <div class="line-vertical"></div>
+          <p class="mes_text_container"> {{ m.gasto }} </p>
+        </div>
+        <div class="line-horizontal"></div>
+      </div>
+      <div class="espacio_blanco"></div>
+    </div>
+    <div class="line-horizontal"></div>
+      <div class="gasto_Container">
+        <div class="gasto_id"> <b>Id</b></div>
+        <div class="line-vertical"></div>
+        <div class="gasto_valor"> <b>Gasto</b></div>
+        <div class="line-vertical"></div>
+        <div class="gasto_fecha"> <b>Fecha</b></div>
+        <div class="line-vertical"></div>
+        <div class="gasto_prestador"><b>Prestamo</b></div>
+        <div class="line-vertical"></div>
+        <div class="gasto_descripcion"><b>Descripcion</b></div>
+        <div class="line-vertical"></div>
+        <div class="gasto_delete"><b>Borrar</b></div>
+      </div>
+      <div class="line-horizontal"></div>
+    
+      <div *ngFor="let gasto of gastosExtra; let i = index" >
+        <div class="gasto_Container">
+          <div class="gasto_id">{{gasto.id}}</div>
+          <div class="line-vertical"></div>
+          <div class="gasto_valor">{{gasto.gasto}}</div>
+          <div class="line-vertical"></div>
+          <div class="gasto_fecha">{{gasto.fecha}} </div>
+          <div class="line-vertical"></div>
+          <div *ngIf="gasto.prestador == 'Empresa' " class="gasto_prestador green">Pagado</div>
+          <div *ngIf="gasto.prestador != 'Empresa' " class="gasto_prestador" (click)="alertpagarPrestamo(gasto)" >{{gasto.prestador}}</div>
+          <div class="line-vertical"></div>
+          <div class="gasto_descripcion"> {{gasto.descripcion}}</div>
+          <div class="line-vertical"></div>
+          <div class="gasto_delete">
+            <input  type="image" class= "gasto_icon" src="assets/img/iconDelete.png" (click)="alertdeleteGastoExtra(gasto)"/>
+          </div>
+        </div>
+        <div class="line-horizontal"></div>
+      </div>
+  </div>
+</ion-content>

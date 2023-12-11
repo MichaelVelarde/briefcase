@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="partes"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Nueva parte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB && constantes != null"  > 
+    <div class="fila_Text"> 
+        <b> Id: </b> {{parte.id}}
+      </div>
+    <div class="input-parent">
+      <label for="nombreArticulo"> <b> Nombre:</b></label>
+      <input type="text" maxlength="40" [(ngModel)]="nombre">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b> Gramos de material</b></label>
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="gramos">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b> Horas de impresion:</b></label>
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="horas">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b>Cantidad de piezas:</b></label>
+      <input  type="number" min= "1" maxlength="20" [(ngModel)]="cantidad">
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b> Escala:</b></label>
+      <input  type="number" min= "1" maxlength="20" [(ngModel)]="escala">
+    </div>
+    <div class="input-parent">
+      <label for="nombreArticulo"> <b> Detalles extra:</b></label>
+      <input type="text" maxlength="40" [(ngModel)]="detalle">
+    </div>
+    <div class="fila_Text"> 
+      <b> Tiene soportes?:</b>
+      <input  class="checkbox" type="checkbox" [(ngModel)]="soporte">
+    </div>
+    <div class="fila_Text">
+      <b>  Material: </b>
+      <select  name="tipoMaterial" class="custom-dropdown2">
+        <option value="{{mat}}" *ngFor="let mat of materiales; let i=index"  >{{mat}} : {{getMatCosto(i)}} bs</option>
+      </select>
+    </div>
+    <div class="input-parent">
+      <label for="precioArticulo"><b>Dimensiones (Altura, Largo, Ancho):</b></label>
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="dimAltura">
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="dimLargo">
+      <input  type="number" min= "0" maxlength="20" [(ngModel)]="dimAncho">
+    </div>
+    
+    <div class="fila_Text">
+      <b> Precio por impresion:</b>
+      <p>{{precio}} bs</p>
+    </div>
+    <div class="fila_Text">
+      <b> Costo por impresion: </b>
+      <p>{{costo}} bs</p>
+    </div>
+    
+
+
+    
+    <div class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="calcular()" >Calcular</ion-button></div>   
+    <div class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="agregarParte()" >Agregar parte</ion-button></div>   
+  </div>
+</ion-content>
+

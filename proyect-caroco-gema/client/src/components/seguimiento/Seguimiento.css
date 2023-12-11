@@ -1,0 +1,52 @@
+.body{
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+}
+.center{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.multi-menu{
+    margin-left: 25%;
+    margin-top: 15px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.box {
+    font-family: "Montserrat";
+    border:1px solid black;
+    height:40px;
+    overflow: hidden;
+    width: 20%;
+ }
+ .date{
+    width: 15%;
+ }
+ p{
+    padding-left: 10px;
+    display: inline;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+ }
+ 
+ select {
+    font-family: "Montserrat";
+    background: #FFFFFF;
+    color: black;
+    border: none;
+    font-size: 20px;
+    height: 40px;
+    padding: 7px;
+    width: 100%;
+ }
+ select:focus{ outline: none;}
+ .icon2{
+    height: 40px;
+    width: 40px;
+}

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Escoge un cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB">
+    <div class="input_container">
+      <select id="filtroBusqueda2" class="custom-dropdown">
+        <option value="name">Nombre</option>
+        <option value="tel">Telefono</option>
+      </select>
+      <input id= "textInput2" type="text" class="input-parent2" >
+      <input type="image" src="assets/img/search.png" width="35" height="35" (click) ="search()" />
+    </div>
+    
+    <div class="line-horizontal"></div> 
+    <div class="cliente_container">
+      <div class="cliente_nombre"><b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="cliente_telefono"><b>Telefono</b></div>
+      <div class="line-vertical"></div>
+      <div class="cliente_ciudad"> <b>Ciudad</b></div>
+      <div class="line-vertical"></div>
+      <div class="cliente_icon_text"> <b>Escoger</b></div>
+      </div>
+    <div class="line-horizontal"></div> 
+    <div *ngFor="let client of clientesFiltrados; let i = index" >
+      <div class="cliente_container">
+        <div class="cliente_nombre">{{client.nombre}}</div>
+        <div class="line-vertical"></div>
+        <div class="cliente_telefono"> {{client.telefono}}</div>
+        <div class="line-vertical"></div>
+        <div class="cliente_ciudad"> {{client.ciudad}}</div>
+        <div class="line-vertical"></div>
+        <div class="cliente_icon_text">   <input  type="image" width="35" height="35" src="assets/img/iconCheck.png" (click) ="setClient(client.idDb , client.nombre)" /></div>
+      </div>
+      <div class="line-horizontal"></div> 
+    </div>
+  </div>  
+
+</ion-content>

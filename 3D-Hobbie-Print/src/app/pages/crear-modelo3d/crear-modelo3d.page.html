@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Modelo3D</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB">
+  <div class="form_container" *ngIf="modelo3d">
+    <b> Id: </b> {{modelo3d.id}}   
+  </div>
+  <div class="input-parent">
+    <label for="nombreArticulo">  <b> Nombre:</b></label>
+    <input type="text" maxlength="40" [(ngModel)]="nombre">
+  </div>
+  <div class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="agregarModelo3D()" >Crear Modelo3D</ion-button></div>   
+</div>
+</ion-content>

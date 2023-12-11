@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Ventas</ion-title>
+    <ion-buttons slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click)="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB">
+
+    <div class="cotizacion_Container">
+      <div class="cotizacion_id"><b>Id</b></div>
+      <div class="line-vertical"></div>
+      <div class="cotizacion_nombre"> <b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="cotizacion_costo"> <b>Precio</b></div>
+      <div class="line-vertical"></div>
+      <div class="cotizacion_factura"> <b>Factura</b></div>
+      <div class="line-vertical"></div>
+      <div class="cotizacion_numPartes"> <b>Modelos</b></div>
+      <div class="line-vertical"></div>
+      <div class="cotizacion_acciones_title"><b>Acciones</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+  
+    <div *ngFor="let venta of ventas; let i = index" >
+      <div class="cotizacion_Container">
+        <div  class="cotizacion_id blue">{{venta.id}}</div>
+        <div class="line-vertical"></div>
+        <div class="cotizacion_nombre">{{venta.nombre}} </div>
+        <div class="line-vertical"></div>
+        <div class="cotizacion_costo"> {{venta.precio + venta.precioPintado}}</div>
+        <div class="line-vertical"></div>
+        <div class="cotizacion_factura"> {{venta.factura}} </div>
+        <div class="line-vertical"></div>
+        <div class="cotizacion_numPartes"> {{getVentaModelosCantidad(venta)}}</div>
+        <div class="line-vertical"></div>
+        <div class="cotizacion_acciones">
+          <input  type="image" *ngIf= "venta.seEntrego"  class= "ventas_icon" src="assets/img/iconEntregado.png" (click)="alertEntregar(venta)"/>
+          <input  type="image" *ngIf= "!venta.seEntrego"  class= "ventas_icon" src="assets/img/iconEntregar.png" (click)="alertEntregar(venta)"/>
+          <input  type="image" class= "ventas_icon" src="assets/img/iconVerVenta.png" (click)="verVenta(venta)"/>
+          <input  type="image" class= "ventas_icon" src="assets/img/iconClient.png" (click)="verCliente(venta.keyCliente , venta.nombre)"/>
+          <input  type="image" class= "ventas_icon" src="assets/img/iconDelete.png" (click)="deleteVenta(venta)"/>
+        </div>
+      </div>
+      <div class="line-horizontal"></div>
+    </div>
+
+  </div> 
+
+</ion-content>

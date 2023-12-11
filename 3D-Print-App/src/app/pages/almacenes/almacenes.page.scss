@@ -1,0 +1,39 @@
+.almacen_container{
+    
+    width: 100%;
+    height: 25px;
+    font-size: 10px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_direccion{
+    width: 45%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_nombre{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_ciudad{
+    width: 17%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_button{
+    width: 8%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

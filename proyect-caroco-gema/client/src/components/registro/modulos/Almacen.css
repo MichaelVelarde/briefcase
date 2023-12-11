@@ -1,0 +1,51 @@
+
+.filter_box{
+    margin-right: 15px;
+    margin-top:   5px;
+    margin-left: 5px;
+    font-size: 16px;
+    height: 30px;
+    border: 2px solid white;
+    color: black;
+    border-radius: 5px;
+    background-color: white;
+}
+.filter_box:focus{
+    color : black;
+    outline: none; /* Remove default focus outline */
+    border-color: black;; /* Change border color when focused */
+    box-shadow: 0 0 5px #798DC5;; /* Add a box-shadow when focused */
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 0.6; /* Firefox */
+}
+.container_deFiltrosAlmacen{
+    margin-top: 20px;
+    margin-left: 20%;
+    width: 60%;
+    background-color: #2B2E63;
+    border: 2px solid black;
+    border-bottom : 0px;
+    display: flex;
+    flex-direction: row;
+ }
+.flter_withLbael{
+    color: #CED1DA;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.button_Registro {
+    margin: auto;
+    width: 100px;
+    background-color: #2B2E63; /* Green */
+    border: 2px solid #CED1DA;
+    border-radius: 5px;
+    color: #CED1DA;
+    font-size: 15px;
+  }
+  .button_Registro:hover{
+    background-color: white; /* Green */
+    border-color: black;
+    color: #2B2E63;
+  }

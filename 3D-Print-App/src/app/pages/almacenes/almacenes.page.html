@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Almacenes</ion-title>
+    <ion-buttons *ngIf="activeUserAdmin" slot="end" ><input type="image" src="assets/img/iconMas.png" width="35" height="35" (click) ="navegarCreate()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB && activeUserAdmin">
+    <div class="almacen_container">
+      <div class="almacen_nombre"><b>Nombre</b></div>
+      <div class="line-vertical"></div>
+      <div class="almacen_direccion"> <b>Direccion</b></div>
+      <div class="line-vertical"></div>
+      <div class="almacen_ciudad"> <b>Ciudad</b></div>
+      <div class="line-vertical"></div>
+      <div class="almacen_button"><b>Borrar</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let almacen of almacenes; let i = index" >
+      <div class="almacen_container">
+        <div class="almacen_nombre">{{almacen.nombre}}</div>
+        <div class="line-vertical"></div>
+        <div class="almacen_direccion"> {{almacen.direccion}}</div>
+        <div class="line-vertical"></div>
+        <div class="almacen_ciudad"> {{almacen.ciudad}}</div>
+        <div class="line-vertical"></div>
+        <input  type="image" class= "almacen_button" src="assets/img/delete.png" (click) = 'borrarAlmacen(almacen)' />
+      </div>
+      <div class="line-horizontal"></div> 
+    </div>
+  </div>
+</ion-content>

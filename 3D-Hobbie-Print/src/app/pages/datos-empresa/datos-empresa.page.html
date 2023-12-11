@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Datos Empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB"> 
+    <div class="line-horizontal"></div>
+    <div class="mes_container">
+      <div class="mes_fecha"> <b>Mes</b></div>
+      <div class="line-vertical"></div>
+      <div class="mes_ganancia"> <b>Ganancia</b></div>
+      <div class="line-vertical"></div>
+      <div class="mes_ganancia_neta"><b>Ganencia neta</b></div>
+      <div class="line-vertical"></div>
+      <div class="mes_gastos"><b>Gastos</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+  
+    <div *ngFor="let mes of meses; let i = index" >
+      <div class="mes_container">
+        <div class="mes_fecha">{{mes.fecha}} </div>
+        <div class="line-vertical"></div>
+        <div class="mes_ganancia"> {{mes.ganancia}}</div>
+        <div class="line-vertical"></div>
+        <div  *ngIf="mes.ganancia-mes.gastos>=0" class="mes_ganancia_neta green">{{quitarDecimales(mes.ganancia-mes.gastos)}}</div>
+        <div  *ngIf="mes.ganancia-mes.gastos<0" class="mes_ganancia_neta red">{{quitarDecimales(mes.ganancia-mes.gastos)}}</div>
+        <div class="line-vertical"></div>
+        <div class="mes_gastos orange">{{mes.gastos}}</div>
+      </div>
+      <div class="line-horizontal"></div>
+    </div>
+
+    <div class="ultra_center"><div class="title_Text"><b> Costos fijos </b></div></div>
+    <div class="line-horizontal"></div>
+    <div class="fila_Text">
+      <b class="boxTittle">Costo correa: </b>
+      <input  class="input-parent3" type="number" min= "1" maxlength="20" [(ngModel)]="constantes.correa">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Costo cama: </b>
+      <input  class="input-parent3" type="number" min= "1" maxlength="20" [(ngModel)]="constantes.heatbed">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Imprevistos: </b>
+      <input  class="input-parent3" type="number" min= "1" maxlength="20" [(ngModel)]="constantes.imprevistos">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Inversion: </b>
+      <input  class="input-parent3"  type="number" min= "1" maxlength="20" [(ngModel)]="constantes.inversion">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Kilovatio-hora: </b>
+      <input  class="input-parent3"  type="number" min= "1" maxlength="20" [(ngModel)]="constantes.kwH">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Costo nozzle: </b>
+      <input  class="input-parent3" type="number" min= "1" maxlength="20" [(ngModel)]="constantes.nozzle">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Costo tubo garganta: </b>
+      <input   class="input-parent3" type="number" min= "1" maxlength="20" [(ngModel)]="constantes.tuboGarganta">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Costo filamento: </b>
+      <input  class="input-parent3" type="number" min= "1" maxlength="20" [(ngModel)]="constantes.costosMateriales[0]">
+    </div>
+    <div class="fila_Text">
+      <b class="boxTittle">Costo resina: </b>
+      <input  class="input-parent3" type="number" min= "1" maxlength="20" [(ngModel)]="constantes.costosMateriales[1]">
+    </div>
+    <div *ngFor="let socio of constantes.socios; let i = index" >
+      <div class="fila_Text"> <div class="boxTittle" >
+        <b>Socio :</b>
+        <div class="gasto_prestador" (click)="cambiarNombreSocio(i)" >{{socio}}</div></div>
+        <input  type="image" width="30" height="30" src="assets/img/iconRestar.png"(click)="alertQuitarSocio(i)" />
+      </div>
+    </div>
+    <div class="fila_Text"><b class="boxTittle">Agregar socio:  </b><input  type="image" width="30" height="30" src="assets/img/iconSumar.png"(click)="agregarSocio()" /></div>   
+   
+    <div class="ultra_center"><ion-button  class = "button_item" color="dark" (click) ="actualizarDatos()" >Actualizar datos</ion-button></div>   
+
+  </div>
+  
+
+</ion-content>

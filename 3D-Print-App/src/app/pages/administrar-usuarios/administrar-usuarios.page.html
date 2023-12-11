@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Administrador</ion-title>
+    <ion-buttons *ngIf="activeUserAdmin" slot="end" ><input type="image" src="assets/img/logIcon.png" width="35" height="35" (click) ="navegarLog()"/> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+    
+  <div *ngIf="!donwloadingDataB && activeUserAdmin">
+    <div class="espacio_enBlanco2"></div>
+    <div class="ultra_center"> <b> Cuenta Empresa</b></div> 
+    
+    <div class="line-horizontal"></div>
+    <div class="cuentaEmpresa_container">
+      <div class="cuentaEmpresa_Fondos"><b>Fondos</b></div>
+      <div class="line-vertical"></div>
+      <div class="cuentaEmpresa_Agregar_Fondos"> <b>Agregar Fondos</b></div>
+      <div class="line-vertical"></div>
+      <div class="cuentaEmpresa_Quitar_Fondos"> <b>Sacar Fondos</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+    <div class="cuentaEmpresa_container">
+      <div *ngIf="cuentaEmpresa != undefined" class="cuentaEmpresa_Fondos"> {{cuentaEmpresa.fondos}}</div>
+      <div class="line-vertical"></div>
+      <div class="cuentaEmpresa_Agregar_Fondos"> <ion-button  class = "button_cuenta_empresa" color="secondary" (click) = 'agregarFondosCuenta()'>Agregar</ion-button></div>
+      <div class="line-vertical"></div>
+      <div class="cuentaEmpresa_Quitar_Fondos"> <ion-button  class = "button_cuenta_empresa" color="danger"  (click) = 'sacarFondosCuenta()'>Sacar</ion-button> </div>
+    </div>
+    <div class="line-horizontal"></div>
+    <div class="espacio_enBlanco"></div>
+    <div class="line-horizontal"></div>
+
+    <div class="ultra_center"> <b> Crear nuevo Usuario</b></div> 
+    <div class="body">
+      <div class="input-parent">
+        <label for="username">Nombre del usuario</label>
+        <input type="text" [(ngModel)]="user">
+      </div>
+    
+      <div class="input-parent">
+        <label for="password">Constraseña del usuario</label>
+        <input type="password" [(ngModel)]="password">
+      </div>
+      <div class="checkbox-body-center"> 
+        <label>
+          <span>Volver administrador</span>
+          <input  class="checkbox" type="checkbox" [(ngModel)]="admin">
+        </label>
+      </div>
+      <div class="button-center">
+        <button type="submit" (click) ="crearUsuario()" >Crear Usuario</button>
+      </div>
+    </div>
+
+    <div class="line-horizontal"></div>
+    <div class="user_container">
+      <div class="user_usuario"> <b>Usuario</b></div>
+      <div class="line-vertical"></div>
+      <div class="user_admin"><b>Es administrador</b></div>
+      <div class="line-vertical"></div>
+      <div class="user_button"><b>Borrar</b></div>
+    </div>
+    <div class="line-horizontal"></div>
+
+    <div *ngFor="let u of users; let i = index" >
+      <div class="user_container">
+        <div class="user_usuario">{{u.user}}</div>
+        <div class="line-vertical"></div>
+        <div *ngIf="u.admin" class="user_admin blue"> True</div>
+        <div *ngIf="!u.admin" class="user_admin red"> False</div>
+        <div class="line-vertical"></div>
+        <input  (click) ="deleteUser(u)"  type="image" class= "user_button" src="assets/img/delete.png"  />
+        
+      </div>
+      <div class="line-horizontal"></div> 
+    </div> 
+  </div>
+</ion-content>

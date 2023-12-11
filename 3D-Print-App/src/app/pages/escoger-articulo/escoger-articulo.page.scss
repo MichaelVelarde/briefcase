@@ -1,0 +1,112 @@
+.inventario_container{
+    width: 100%;
+    height: 35px;
+    font-size: 9px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_id{
+    width: 10%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.red{color:red}
+.blue{color: blue}
+.green{color:green}
+
+.inventario_nombre{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_precio{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_cantidad{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.red{color:red}
+.yellow{color: orange}
+.green{color:green}
+
+.inventario_icon{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_container{
+    
+    width: 100%;
+    height: 25px;
+    font-size: 10px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_cantidadA{
+    width: 20%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_nombre{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item_cantidadE{
+    text-transform: none;
+    white-space: normal;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.almacen_cantidadE{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add_button{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_input_desc{
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 15%;
+    padding-right: 15%;
+    height: auto;
+    font-size: 15px;
+    font-family: "Times New Roman";
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+

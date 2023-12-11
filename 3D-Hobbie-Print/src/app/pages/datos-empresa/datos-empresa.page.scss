@@ -1,0 +1,80 @@
+
+.mes_container{
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mes_fecha{
+    width: 16%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mes_ganancia{
+    width: 28%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mes_ganancia_neta{
+    width: 28%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.green{color:green}
+.red{color: red}
+
+.mes_gastos{
+    width: 28%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orange{color:orange}
+
+.fila_Text {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+    gap: 15px;
+}
+.fila_button{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 30px;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+.title_Text{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxTittle{
+    display: flex;
+    gap: 15px;
+    width: 50%;
+}
+.input-parent3{
+    width: 30%;
+    font-size: 16px;
+    background: white;
+    box-shadow: 0px 0px 0px 1px black;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.2s ease;
+  }

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Articulo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB  && item" >
+    <div class="text_line"> <b>{{item.nombre}}</b> </div>
+    <input class = "img_articulo" type="image" src="{{item.nameImage}}" />
+    <div class="text_line"> <b>Cantidad total:</b>{{item.cantTotal}}</div>
+    <div class="text_line"><b>Precio:</b> {{item.precio}}
+      <input  *ngIf="activeUserAdmin" type="image" class= "edit_icon" src="assets/img/iconEdit.png" (click) = 'editPrecio()'/>
+    </div>
+    <div class="text_line"> <b>Inversion:</b> {{item.costoInversion}}
+      <input  *ngIf="activeUserAdmin" type="image" class= "edit_icon" src="assets/img/iconEdit.png" (click) = 'editInversion()'/>
+    </div>
+    <div class="text_line"><b>Unidad:</b> {{item.unidad}}</div>
+    <div *ngFor="let almacen of almacenes" >
+      <div class="text_line"><b>{{almacen.nombre}}:</b> {{getCantidadAlmacen(almacen.idDb)}} 
+        <input *ngIf="activeUserAdmin" type="image" class= "edit_icon" src="assets/img/iconEdit.png" (click) = 'editCantidadAlmacen(almacen)'/>
+      </div>
+    </div>
+    <div *ngIf="activeUserAdmin" class="ultra_center"><ion-button class = "button_item" color="success" (click) ="actualizarArticulo()" >Actualizar Articulo</ion-button></div>
+  </div>
+
+</ion-content>

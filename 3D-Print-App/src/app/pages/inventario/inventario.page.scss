@@ -1,0 +1,66 @@
+.custom-dropdown-Almacenes {
+    width: 30%;
+    margin-top: 5px;
+    border: 1px solid black;
+    background-color: white;
+}
+.inventario_container{
+    width: 100%;
+    height: 35px;
+    font-size: 9px;
+    font-family: "Times New Roman";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_id{
+    width: 8%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.red{color:red}
+.blue{color: blue}
+.green{color:green}
+
+.inventario_nombre{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_precio{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_cantidad{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.red{color:red}
+.yellow{color: orange}
+.green{color:green}
+.inventario_buttons{
+    width: 17%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventario_icon{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_item{
+    text-transform: none;
+}

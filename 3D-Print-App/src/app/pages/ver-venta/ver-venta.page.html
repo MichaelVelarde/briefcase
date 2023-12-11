@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Venta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="donwloadingDataB" class='loadingSpinner'></div>
+
+  <div *ngIf="!donwloadingDataB && cliente" >
+    <div class="container_input_envio" ><b>Id de la venta: </b> {{venta.id}}</div>
+    <div class="text_line" ><b>Nombre cliente: </b> {{cliente.nombre}}</div>
+    <div class="text_line" ><b>Nombre vendedor: </b> {{venta.vendedor}}</div>
+    <div class="text_line" ><b>Ciudad: </b> {{cliente.ciudad}}</div>
+    <div class="text_line" ><b>Telefono: </b> {{cliente.telefono}}</div>
+    <div class="text_line" ><b>Nit: </b> {{cliente.nit}}</div>
+    <div class="text_line" ><b>Factura: </b> {{getBool(venta.factura)}}</div>
+    <div class="text_line" ><b>Interior: </b> {{getBool(venta.interior)}}</div>
+    <div class="text_line" ><b>Costo: </b> {{venta.costo}}</div>
+    <div class="container_input_envio" ><b>Costo de envio: </b><ion-input [(ngModel)]="costoEnvio" min="0" type="number" ></ion-input></div>
+    <div class="container_input_envio" ><b>Entregado: </b> {{getBool(venta.seEntrego)}} 
+      <ion-button *ngIf="!venta.seEntrego" class = "button_item" color="secondary" (click) ="entregarVenta()" >Entregar</ion-button>
+      <ion-button *ngIf="venta.seEntrego" class = "button_item" color="danger" (click) ="cancelarVenta()" >Cancelar</ion-button>
+    </div>
+    <div class="ultra_center"><ion-button class = "button_item" color="success" (click) ="actualizarVenta()" >Actualizar Venta</ion-button></div>
+
+    <div *ngFor="let item of items; let i = index" >
+      <div class="line-horizontal"></div>
+      <div class="text_line" ><b>Articulo: </b> {{i +1}}</div>
+      <input class = "img_articulo" type="image" src="{{item.nameImage}}" />
+      <div class="text_line" ><b>Id: </b> {{item.id}}</div>
+      <div class="text_line" ><b>Nombre: </b> {{item.nombre}}</div>
+      <div class="text_line" ><b>Precio articulo: </b> {{item.precio}}</div>
+      <div class="text_line" ><b>Descuento: </b> {{getDescuento(i)}}</div>
+      <div class="text_line" ><b>Cantidad total comprada: </b> {{getCantidadTotal(i)}}</div>
+      <div *ngFor="let cant of venta.articulosCantCadaLocal[i]; let j = index" >
+        <div class="text_line" ><b>Cantidad de {{getNombreAlmacen(i,j)}}: </b>   {{cant}}</div>
+      </div>
+    </div>
+
+
+  </div>
+
+</ion-content>

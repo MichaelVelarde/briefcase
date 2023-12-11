@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Almacen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="input-parent">
+    <label for="nombreAlmacen">Nombre del almacen</label>
+    <input type="text" maxlength="50" [(ngModel)]="nombre">
+  </div>
+  <div class="input-parent">
+    <label for="direccionAlmacen">Direccion del almacen</label>
+    <input type="text" maxlength="50" [(ngModel)]="direccion">
+  </div>
+
+  <div class="line_container">
+    <b>Ciudad:</b>
+    <select id="valorCiudad" class="custom-dropdown">
+      <option value="La Paz">La Paz</option>
+      <option value="Santa Cruz">Santa Cruz</option>
+      <option value="Cochabamba">Cochabamba</option>
+      <option value="Oruro">Oruro</option>
+      <option value="Potosi">Potosi</option>
+      <option value="Tarija">Tarija</option>
+      <option value="Beni">Beni</option>
+      <option value="Chuquisaca">Chuquisaca</option>
+      <option value="Pando">Pando</option>
+    </select>
+  </div>
+
+  <div class="ultra_center"><ion-button color="dark" (click) = "saveAlmacen()">Agregar Almacen</ion-button></div>
+  
+
+</ion-content>
