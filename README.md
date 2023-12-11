@@ -5,20 +5,20 @@ Welcome to my data engineering portfolio! I'm Carlos Michael Velarde Kubber, a B
 
 ## Projects
 
-### Application in Ionic for storage control | S.K Bolivia 3D Printers
-**Folder:** Data_Eng_Capstone_Project
-
-Developed an application aimed at improving company management and organization for enhanced efficiency, utilizing Ionic
-and Firebase, making the application accessible on both Android and iOS platforms
-
 ### Ionic Application for Printing Production Control | Hobbie 3D Print 
-**Folder:** Google_Data_Analytics
+**Folder:** 3D-Hobbie-Print
 
 Developed an application to manage 3D printing production, employing best clean coding practices while ensuring the proper
 functionality of specific company printers.
 
+### Application in Ionic for storage control | S.K Bolivia 3D Printers
+**Folder:** 3D-Print-App
+
+Developed an application aimed at improving company management and organization for enhanced efficiency, utilizing Ionic
+and Firebase, making the application accessible on both Android and iOS platforms
+
 ### React Website for Administration and Control | Graduation Project 
-**Folder:** Squeeze_Play
+**Folder:** proyect-caroco-gema
 
 Developed a React website for the administration and control of mining production as part of my graduation project, ensuring
 accurate tracking of employees, production, sales, machine maintenance, and additional expenses for the mineral processing
