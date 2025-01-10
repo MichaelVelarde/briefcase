@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+.ul2{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: $cafe-gris;  
+    color: $azul;
+  }
+
+  .ul2 li { 
+    display: block;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: none;
+  }
+  .registroActual{
+   background-color: $cafe-oscuro;
+   color: $piel;
+  }
+  /* Change the link color to #111 (black) on hover */
+  .ul2 li:hover {    
+    background-color: $cafe;
+    color: $piel;
+  } 
+  
+
+  .ul3{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: $cafe-gris;  
+    color: $azul;
+    border-bottom: none;
+    border-top: 2px solid $cafe-oscuro;
+    border-left: 2px solid $cafe-oscuro;
+    border-right: 2px solid $cafe-oscuro;
+  }
+
+  .ul3 li { 
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+  /* Change the link color to #111 (black) on hover */
+  .ul3 li:hover {    
+    background-color: $cafe;
+    color: $piel;
+  } 
+  

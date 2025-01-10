@@ -1,0 +1,255 @@
+@import '../../variables.scss';
+
+.venta-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+  .menu-container{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-title-line{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .menu-container h1{
+    margin: 0;
+  }
+  .client-info{
+    width: 100%;
+  }
+  .client-info .icon{
+    cursor: pointer;
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+  }
+  .client-info input {
+    background-color: $piel;
+    color: $azul;
+    width: 70%;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid $cafe-oscuro;
+    border-radius: 5px;
+  }
+  .client-info input:focus{
+    outline: none; /* Remove default focus outline */
+    border-color: black;; /* Change border color when focused */
+    box-shadow: 0 0 5px $cafe-oscuro;; /* Add a box-shadow when focused */
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $azul;
+      opacity: 0.6; /* Firefox */
+  }
+  .client-list {
+    list-style: none;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid $cafe-oscuro;
+    max-height: 120px;
+    overflow-y: auto;
+  }
+  .client-list li { 
+    padding: 4px;
+    cursor: pointer;
+  }
+  
+  .client-list li:hover {
+    background-color: $cafe;
+  }
+  .buttons_comanda-container{
+    margin-left: 5%;
+    width: 90%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .comanda_button_class {
+    height: 30px;
+    width: 50%;
+    background-color: $piel;
+    color: $azul; 
+    border: 1px solid $cafe-oscuro;
+    border-radius: 8px;
+  }
+  .comanda_button_class:hover{
+    background-color: $cafe;
+    color: $piel;
+  }
+  .comanda-info {
+    font-size: 14px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width:32%;
+    border-radius: 6px;
+    height: 93vh;
+    gap: 10px;
+    background-color: $cafe-gris;
+    padding: 10px;
+    border: 1px solid $cafe-oscuro;
+  }
+  .same_line{
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .same_line2{
+    display: flex;
+    flex-direction: row;
+  }
+  .same_line2 p{
+    max-width: 80%;
+  }
+  .comanda-info p {
+    margin: 3px 0;
+  }
+  .products-list {
+    max-height: fit-content;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr; /* Adjust the number of columns as needed */
+    gap: 2px; /* Space between items */
+    padding: 3px;
+  }  
+  .product-item {
+    display: contents; /* Allow children to take grid styles */
+  }
+  .product-cell {
+    font-size: 12px;
+    padding: 3px;
+    color: $piel;
+    background-color: $cafe-oscuro;
+    text-align: center;
+  }  
+  .product-item:last-child .product-cell {
+    border-bottom: none; /* Remove the bottom border from the last row */
+  }
+  .product-cell .icon{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .product-cards {
+    padding-top: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .product-card {
+    background-color: $cafe;
+    color: $piel;
+    border: 1px solid $cafe-oscuro;
+    border-radius: 8px;
+    padding: 10px;
+    width: 155px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card h2 {
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  .product-card p {
+    margin: 5px 0px 0px 0px;
+    font-size: 11px;
+  }
+  .product-card label {
+    font-size: 12px;
+  }
+  .product-card button {
+    margin-top: 5px;
+    background-color: $piel;
+    color: $azul; 
+    border: 1px solid $cafe-oscuro;
+    border-radius: 8px;
+  }
+  .product-card button:hover{
+    background-color: $cafe-oscuro;
+    border: 1px solid $piel;
+    color: $piel;
+  }
+  
+  .select-category-box {
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px ;
+    border: 2px solid $cafe-oscuro;
+    background-color: $cafe-gris;
+    color: $azul;
+    font-size: 15px; /* Font size */
+    width: 150px; /* Full width */
+    cursor: pointer; /* Cursor style */
+  }
+  .select-category-box:focus {
+    outline: none; /* Remove the default outline */
+    border-color: $cafe; /* Border color on focus */
+  }
+  
+  .select-category-box option {
+    background-color: $cafe-gris; /* Background color */
+    color: $azul; /* Font color */
+  }
+  .ver_comandas_button {
+    margin-left: 15px;
+    margin-top: 10px;
+    height: 30px;
+    width: 25%;
+    background-color: $cafe-gris;
+    color: $azul; 
+    border: 2px solid $cafe;
+    border-radius: 8px;
+  }
+  .ver_comandas_button:hover{
+    background-color: $cafe;
+    color: $piel;
+  }
+  
+
+
+  .spinner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Spinner styling */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 8px solid rgba(0, 0, 0, 0.2);
+    border-top: 8px solid #3498db; /* Color of the spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  

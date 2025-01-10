@@ -1,0 +1,87 @@
+@import '../../variables.scss'; 
+.link-reset {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.side-menu {
+  position: fixed;
+  width: 270px;
+  background-color: $azul;
+  color: $piel;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+}
+
+.side-menu.minimized {
+  width: 50px;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.LogoTypica {
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;  // This makes the image circular
+  object-fit: cover;
+}
+.iconMenu {
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.selected{
+    background-color:$cafe-oscuro ;
+}
+
+.menu-item .icon {
+  margin-right: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.menu-item .module {
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+.side-menu.minimized .module {
+  display: none;
+}
+
+.side-menu.minimized .menu-item {
+  justify-content: center;
+}
+
+.side-menu.minimized .icon {
+  margin-right: 0;
+}
+.menu-footer {
+    margin-top: auto;
+    margin-bottom: 15px;
+}

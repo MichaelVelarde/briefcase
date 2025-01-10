@@ -1,0 +1,157 @@
+@import '../../variables.scss';
+
+.body_form{
+  padding: 15px;
+  overflow-y: auto;
+  max-height: 80vh; 
+  border-radius: 10px;    
+  border: 2px solid black;
+  background-color: $piel;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 30%;
+  top: 25%;
+  width: 40%; 
+}
+.line_container{
+  margin-bottom: 5px;
+  margin-left: 10px;
+  width: 90%;
+  gap:5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.line_container h3{
+  width: 20%;
+  font-size: 18px;
+  margin:0;
+}
+.line_container p{
+  width: 45%;
+  font-size: 16px;
+  margin:0;
+}
+.input_Container{
+  width: 50%;
+  height: 22px;
+}
+.input_Container2{
+  width: 20%;
+  height: 20px;
+}
+.Form_Title{
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.button_Registro {
+  margin: auto;
+  width: 100px;
+  background-color: $piel; /* Green */
+  border: 2px solid $cafe-oscuro;
+  border-radius: 5px;
+  color: $azul;
+  font-size: 14px;
+}
+.button_Registro:hover{
+  background-color: $cafe;
+  color: $piel;
+}
+form button {
+  margin: auto;
+  width: 100px;
+  background-color: $cafe-oscuro; /* Green */
+  border-color: $cafe-gris;
+  color: $piel;
+  padding: 5px;
+  font-size: 15px;
+}
+form button:hover{
+  background-color: $azul; 
+}
+.box2 {
+  border:1px solid black;
+  height: 25px;
+  overflow: hidden;
+}
+.select_Class {
+  color: black;
+  border: none;
+  font-size: 15px;
+  height: 25px;
+  padding: 2px;
+  width: 100%;
+}
+.containerIcons{
+  display: flex;
+  flex-direction: row;
+  width: 80px;
+}
+.iconForm{
+  width: 25px;
+  height: 25px;
+}
+select:focus{ outline: none;}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px; /* 75% of 60px */
+  height: 25.5px; /* 75% of 34px */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f44336;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19.5px; /* 75% of 26px */
+  width: 18.75px; /* 75% of 25px */
+  left: 3px; /* 75% of 4px */
+  bottom: 3px; /* 75% of 4px */
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(19.5px); /* 75% of 26px */
+  -ms-transform: translateX(19.5px); /* 75% of 26px */
+  transform: translateX(19.5px); /* 75% of 26px */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 25.5px; /* 75% of 34px */
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

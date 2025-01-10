@@ -1,0 +1,190 @@
+@import '../../variables.scss';
+
+
+.sales-container {
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.sale-box {
+  background-color: $cafe-gris;
+  border: 1px solid $cafe-oscuro;
+  border-radius: 8px;
+  padding: 10px;
+  height: auto;
+  width: calc(22.5% - 15px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.same_line3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+}
+.sale-box .icon{
+  position: absolute; /* Allows for positioning relative to .sale-box */
+  top: 8px;
+  right: 10px;
+  width: 24px; /* Set a fixed size for the icon */
+  height: 24px;
+  cursor: pointer;
+}
+.sale-box .icon2{
+  position: absolute; /* Allows for positioning relative to .sale-box */
+  top: 8px;
+  right: 44px;
+  width: 24px; /* Set a fixed size for the icon */
+  height: 24px;
+  cursor: pointer;
+}
+
+.sale-box button {
+  width: 47%;
+  margin-top: 5px;
+  background-color: $piel;
+  color: $azul; 
+  border: 1px solid $cafe-oscuro;
+  border-radius: 4px;
+}
+.sale-box button:hover{
+  background-color: $cafe-oscuro;
+  border: 1px solid $piel;
+  color: $piel;
+}
+.sale-box p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: $azul;
+}
+
+.sale-box strong {
+  font-weight: bold;
+}
+
+.discount-display {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.discount-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-switch {
+  width: 40px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #ddd;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.toggle-switch.currency {
+  background-color: #007bff;
+  color: white;
+}
+
+.toggle-switch.percentage {
+  background-color: orange;
+  color: white;
+}
+
+.discount-input {
+  width: 60px;
+  text-align: center;
+}
+
+.increment-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.increment-buttons button {
+  background-color: $cafe-oscuro;
+  color: $piel;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.increment-buttons button:hover {
+  background-color: $cafe;
+}
+.box_container_iconMetodo{
+  margin-left: 15px;
+  width: 70px;
+  height: 60px;
+  border: 1px solid $azul;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.selected2{
+  background-color:$piel ;
+}
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $cafe-oscuro;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $piel;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: $cafe-oscuro;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}

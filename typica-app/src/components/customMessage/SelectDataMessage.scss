@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.form_New_Date_container {
+    border-radius: 10px;    
+    border: 2px solid $cafe-oscuro;
+    background-color: $piel;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    left: 38%;
+    top: 30%;
+    width: 20%;
+    height: auto;
+  }
+.input_Date{
+    font-size: 20px;
+    height: 30px;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    width: 80%;
+}

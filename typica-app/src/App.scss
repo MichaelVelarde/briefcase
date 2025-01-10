@@ -1,0 +1,70 @@
+@import './variables.scss';
+
+.app-container {
+  display: flex;
+  height: 100%;
+}
+
+.main-content {
+  padding-left: 270px; /* Adjust this value to match the width of the side menu */
+  height:  100vh;
+  background-color: $piel;
+  color: $azul;
+  width: 100%;  
+}
+
+.side-menu.minimized + .main-content {
+  padding-left: 50px; /* Adjust this value to match the width of the minimized side menu */
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
