@@ -23,6 +23,13 @@ Welcome to my data engineering portfolio! I'm Carlos Michael Velarde Kubber, a B
       accurate tracking of employees, production, sales, machine maintenance, and additional expenses for the mineral processing
       company Caroco GEMA. Additionally, implemented a monthly summary section to provide a comprehensive overview of all
       expenses and earnings.
+      
+4. **Electron Application for Point of Sale | Typica Bolivia**
+    - *Folder:* `typica-app
+      
+    - Developed an Electron application with React and Firebase to streamline sales operations for a prominent coffee restaurant in
+     Bolivia. The system manages customers, employees, products, inventory, sales, and active orders, while generating daily or
+     monthly summaries. Integrated printer support for ticket and report printing
 
 ## How to Access Projects
 To access a specific project:
